@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MovieCatalogue</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_tvshows">Tv Shows</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="error_message">Error Message</string>
+    <string name="error_title">Error</string>
+    <string name="no_result">No Result</string>
+    <string name="try_again">Please Try Again..</string>
+    <string name="unknown">Something went wrong, please check your connection or server broken..</string>
+    <string name="change_language_settings">Change Language</string>
+    <string name="delete_all_lists">Delete All Lists</string>
+    <string name="deleted">Deleted</string>
+    <string name="tv_deleted">TV Deleted</string>
+    <string name="movie_deleted">Movie Deleted</string>
+    <string name="add_fav">Added to Favorites</string>
+    <string name="del_fav">Removed from Favorites</string>
+    <string name="miss_desc">Missing Description</string>
+    <string name="delete_all_options">Are You Sure Wanna Delete All Favorite?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="back">Back</string>
+    <string name="search_item">Search Item</string>
+    <string name="appwidget_text">Favorite List</string>
+    <string name="add_widget">Add widget</string>
+</resources>
