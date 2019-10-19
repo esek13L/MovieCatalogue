@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/change_lang"
+        android:icon="@color/colorSecondary"
+        android:title="@string/change_language_settings"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_settings"
+        android:title="Notifications"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/search_item"
+        android:icon="@drawable/ic_search_orange_24dp"
+        android:orderInCategory="100"
+        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
+        android:title="@string/search_item"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom" />
+
+</menu>
