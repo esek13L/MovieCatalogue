@@ -14,6 +14,7 @@ public class RestService {
 
     private static RestService instance;
     private String apiKey = BuildConfig.TMDB_API_KEY;
+    private String language = "en-US";
 
     @Inject
     public RestApi api;
@@ -36,5 +37,13 @@ public class RestService {
 
     public Single<Tv> getTv(){
         return api.getTv(apiKey);
+    }
+
+    public Single<Movie> searchMovies(String query){
+        return api.searchMovies(apiKey, language, query );
+    }
+
+    public Single<Tv> searchTv(String query){
+        return api.searchTv(apiKey,language, query);
     }
 }

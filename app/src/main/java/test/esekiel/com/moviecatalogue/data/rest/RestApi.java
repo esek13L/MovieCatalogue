@@ -13,4 +13,10 @@ public interface RestApi {
 
     @GET("3/tv/airing_today")
     Single<Tv> getTv(@Query("api_key") String API_KEY);
+
+    @GET("3/search/movie")
+    Single<Movie> searchMovies(@Query("api_key")String API_KEY, @Query("main_menu") String language, @Query("query") String keyword);
+
+    @GET("3/search/tv")
+    Single<Tv> searchTv(@Query("api_key")String API_KEY, @Query("main_menu") String language, @Query("query") String keyword);
 }

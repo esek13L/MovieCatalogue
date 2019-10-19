@@ -57,4 +57,38 @@ public class MovieViewModel extends ViewModel {
         );
 
     }
+
+    public void search(String query){
+        searchMovies(query);
+
+    }
+    private void searchMovies(String keyword){
+        loading.setValue(true);
+        disposable.add(
+                service.searchMovies(keyword)
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableSingleObserver<Movie>() {
+                            @Override
+                            public void onSuccess(Movie value) {
+                                movies.setValue(value);
+                                movieLoadError.setValue(false);
+                                loading.setValue(false);
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                movieLoadError.setValue(true);
+                                loading.setValue(false);
+                                e.printStackTrace();
+                            }
+                        })
+        );
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        disposable.clear();
+    }
 }

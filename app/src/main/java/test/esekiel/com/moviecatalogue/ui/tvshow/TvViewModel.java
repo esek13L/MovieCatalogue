@@ -57,6 +57,36 @@ public class TvViewModel extends ViewModel {
 
     }
 
+    public void search(String query){
+        searchTvshow(query);
+    }
+
+    private void searchTvshow(String query){
+        loading.setValue(true);
+        disposable.add(
+                service.searchTv(query)
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableSingleObserver<Tv>() {
+
+                            @Override
+                            public void onSuccess(Tv value) {
+                                tvShow.setValue(value);
+                                tvLoadError.setValue(false);
+                                loading.setValue(false);
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                tvLoadError.setValue(true);
+                                loading.setValue(false);
+                                e.printStackTrace();
+
+                            }
+                        })
+        );
+    }
+
     @Override
     protected void onCleared() {
         super.onCleared();
