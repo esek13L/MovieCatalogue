@@ -14,6 +14,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import test.esekiel.com.moviecatalogue.ui.detail.MovieDetailActivity;
 import test.esekiel.com.moviecatalogue.R;
 import test.esekiel.com.moviecatalogue.data.model.MovieResult;
 import test.esekiel.com.moviecatalogue.util.Utils;
@@ -62,19 +63,23 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             textTitle.setText(movie.getTitle());
             textOverview.setText(movie.getOverview());
             Utils.loadImage(imagePoster, movie.getPosterPath(), Utils.getProgressDrawable(itemView.getContext()));
-            /*
+
             cardView.setOnClickListener(view -> {
                 Context context = view.getContext();
                 Intent intent = new Intent(context, MovieDetailActivity.class);
                 Bundle bundle = new Bundle();
+                bundle.putLong("id", movie.getId());
                 bundle.putString("title",movie.getTitle());
                 bundle.putString("overview", movie.getOverview());
                 bundle.putString("poster_path", movie.getPosterPath());
+                bundle.putString("back_path", movie.getBackdropPath());
+                bundle.putDouble("vote_average", movie.getVoteAverage());
+                bundle.putString("release_date", movie.getReleaseDate());
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             });
 
-             */
+
         }
     }
 

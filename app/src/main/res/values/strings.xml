@@ -23,4 +23,14 @@
     <string name="search_item">Search Item</string>
     <string name="appwidget_text">Favorite List</string>
     <string name="add_widget">Add widget</string>
+    <string name="back_poster">BackdropPoster</string>
+    <string name="rating">%s/10</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pref_key_movie_fav">movie_favorite</string>
+    <string name="saved_fav_movie_key">new Favorite Movie Key</string>
+    <string name="pref_key_tv_fav">tv_favorite</string>
+    <string name="saved_fav_tv_key">new Favorite Tv Key</string>
+    <string name="text_overview">Overview</string>
 </resources>

@@ -16,6 +16,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import test.esekiel.com.moviecatalogue.R;
 import test.esekiel.com.moviecatalogue.data.model.TvResult;
+import test.esekiel.com.moviecatalogue.ui.detail.MovieDetailActivity;
+import test.esekiel.com.moviecatalogue.ui.detail.TvDetailActivity;
 import test.esekiel.com.moviecatalogue.util.Utils;
 
 public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
@@ -62,19 +64,23 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
             textTitle.setText(tv.getName());
             textOverview.setText(tv.getOverview());
             Utils.loadImage(imagePoster, tv.getPosterPath(), Utils.getProgressDrawable(itemView.getContext()));
-            /*
+
             cardView.setOnClickListener(view -> {
                 Context context = view.getContext();
-                Intent intent = new Intent(context, TvshowDetailActivity.class);
+                Intent intent = new Intent(context, TvDetailActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("title",tv.getTitle());
+                bundle.putLong("id", tv.getId());
+                bundle.putString("title",tv.getName());
                 bundle.putString("overview", tv.getOverview());
-                bundle.putString("poster_path", tv.getImgurl());
+                bundle.putString("poster_path", tv.getPosterPath());
+                bundle.putString("back_path", tv.getBackdropPath());
+                bundle.putDouble("vote_average", tv.getVoteAverage());
+                bundle.putString("release_date", tv.getFirstAirDate());
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             });
 
-             */
+
         }
     }
 

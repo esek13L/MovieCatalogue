@@ -11,5 +11,10 @@
         android:icon="@drawable/ic_live_tv_white_24dp"
         android:title="@string/title_tvshows" />
 
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_favorite_white_24dp"
+        android:title="@string/title_favorite"/>
+
 
 </menu>
