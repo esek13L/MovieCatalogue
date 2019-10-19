@@ -1,5 +1,7 @@
 package test.esekiel.com.moviecatalogue.util;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.widget.ImageView;
 
@@ -13,6 +15,7 @@ import java.util.Date;
 
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 import test.esekiel.com.moviecatalogue.R;
+import test.esekiel.com.moviecatalogue.util.widget.MovieWidget;
 
 public class Utils {
 
@@ -68,5 +71,7 @@ public class Utils {
     {
         return format(date);
     }
+
+
 
 }

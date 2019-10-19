@@ -1,6 +1,8 @@
 package test.esekiel.com.moviecatalogue.ui.favorite.movie;
 
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import test.esekiel.com.moviecatalogue.R;
+import test.esekiel.com.moviecatalogue.util.widget.MovieWidget;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,7 +89,10 @@ public class FavoriteMovieFragment extends Fragment {
         builder
                 .setMessage(R.string.delete_all_options)
                 .setCancelable(true)
-                .setPositiveButton(R.string.yes, (dialogInterface, i) -> viewModel.deleteAll())
+                .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+                    viewModel.deleteAll();
+                    updateAllWidgets();
+                })
                 .setNegativeButton(R.string.no, (dialogInterface, i) -> dialogInterface.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -94,5 +100,13 @@ public class FavoriteMovieFragment extends Fragment {
 
     private void loadData() {
         viewModel.getAllMovies().observe(this, movies -> adapter.setMovies(movies));
+    }
+
+    private void updateAllWidgets() {
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(getContext());
+        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(getContext(), MovieWidget.class));
+        // Tell the widgets that the list items should be invalidated and refreshed!
+        // Will call onDatasetChanged in ListWidgetService, doing a new requery
+        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.stack_view);
     }
 }

@@ -25,6 +25,9 @@ public interface MovieDao {
     @Query("SELECT * FROM " + Movie.TABLE_NAME + " ORDER BY " + Movie.COLUMN_NAME + " ASC")
     LiveData <List<Movie>> getMovies ();
 
+    @Query("SELECT * from " + Movie.TABLE_NAME)
+    List<Movie> getWidgetMovie();
+
 
 
 

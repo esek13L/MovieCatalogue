@@ -50,6 +50,7 @@ public abstract class MovieDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            dao.getWidgetMovie();
             dao.getMovies();
             return null;
         }

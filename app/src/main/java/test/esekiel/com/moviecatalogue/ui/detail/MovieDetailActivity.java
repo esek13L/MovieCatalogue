@@ -6,7 +6,10 @@ import androidx.lifecycle.ViewModelProviders;
 import test.esekiel.com.moviecatalogue.R;
 import test.esekiel.com.moviecatalogue.data.room.movie.Movie;
 import test.esekiel.com.moviecatalogue.util.Utils;
+import test.esekiel.com.moviecatalogue.util.widget.MovieWidget;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -76,12 +79,14 @@ public class MovieDetailActivity extends AppCompatActivity {
                     fabFavorite.setImageResource(R.drawable.ic_favorite_orange_24dp);
                     isFavorite = false;
                     Toast.makeText(this, getResources().getString(R.string.add_fav), Toast.LENGTH_SHORT).show();
+                    updateAllWidgets();
                     saveMovie();
                     saveFavorite(isFavorite);
                 } else {
                     fabFavorite.setImageResource(R.drawable.ic_favorite_border_orange_24dp);
                     isFavorite = true;
                     Toast.makeText(this, getResources().getString(R.string.del_fav), Toast.LENGTH_SHORT).show();
+                    updateAllWidgets();
                     deleteMovie();
                     saveFavorite(isFavorite);
                 }
@@ -169,5 +174,13 @@ public class MovieDetailActivity extends AppCompatActivity {
     private void deleteMovie(){
         Movie movie = new Movie(textId, textTitle, textOverview, imgPic, imgBck, textDate, textRating);
         viewModel.delete(movie);
+    }
+
+    private void updateAllWidgets() {
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this.getApplicationContext());
+        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this.getApplicationContext(), MovieWidget.class));
+        // Tell the widgets that the list items should be invalidated and refreshed!
+        // Will call onDatasetChanged in ListWidgetService, doing a new requery
+        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.stack_view);
     }
 }
