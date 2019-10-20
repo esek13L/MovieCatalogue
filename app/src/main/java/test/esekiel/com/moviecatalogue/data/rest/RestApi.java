@@ -1,6 +1,7 @@
 package test.esekiel.com.moviecatalogue.data.rest;
 
 import io.reactivex.Single;
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 import test.esekiel.com.moviecatalogue.data.model.Movie;
@@ -19,4 +20,7 @@ public interface RestApi {
 
     @GET("3/search/tv")
     Single<Tv> searchTv(@Query("api_key")String API_KEY, @Query("main_menu") String language, @Query("query") String keyword);
+
+    @GET("3/discover/movie")
+    Call<Movie> discoverMovie(@Query("api_key")String API_KEY, @Query("primary_release_date.gte") String gte, @Query("primary_release_date.lte") String lte);
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovieCatalogue</string>
+    <string name="app_name">MovieCatalogueFix</string>
     <string name="title_movies">Movies</string>
     <string name="title_tvshows">Tv Shows</string>
     <string name="title_favorite">Favorite</string>
@@ -33,4 +33,13 @@
     <string name="pref_key_tv_fav">tv_favorite</string>
     <string name="saved_fav_tv_key">new Favorite Tv Key</string>
     <string name="text_overview">Overview</string>
+    <string name="key_daily_reminder">daily_reminder</string>
+    <string name="key_release_reminder">release_reminder</string>
+    <string name="title_release">Release Reminder</string>
+    <string name="title_daily">Daily Reminder</string>
+    <string name="summary_release">Reminder showing the movie that released today</string>
+    <string name="summary_daily">Reminder to return to app</string>
+    <string name="message_daily">Hey Dont you miss me?</string>
+    <string name="release_today_msg">%s Release today, don\'t forget to watch it!</string>
+    <string name="has_been_release">%s has been release today!</string>
 </resources>

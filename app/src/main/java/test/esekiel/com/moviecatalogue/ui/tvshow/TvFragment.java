@@ -21,11 +21,11 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import test.esekiel.com.moviecatalogue.util.notifications.NotificationActivity;
 import test.esekiel.com.moviecatalogue.R;
 
 public class TvFragment extends Fragment {
@@ -120,7 +120,9 @@ public class TvFragment extends Fragment {
             case R.id.change_lang:
                 Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
                 startActivity(intent);
-
+            case R.id.action_settings:
+                intent = new Intent(getContext(), NotificationActivity.class);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
