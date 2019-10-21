@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         buildConfigField("String", "TMDB_API_KEY", '"fdc3d9ee3903766dc0b03d0adc487376"')
-        applicationId "test.esekiel.com.moviecatalogue"
+        applicationId "com.esekiel.moviecatalogue"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1

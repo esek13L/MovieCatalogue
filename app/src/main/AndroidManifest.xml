@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="test.esekiel.com.moviecatalogue">
+    package="com.esekiel.moviecatalogue">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".util.notifications.NotificationActivity"></activity>
+        <activity android:name="com.esekiel.moviecatalogue.util.notifications.NotificationActivity"></activity>
 
-        <receiver android:name=".util.widget.MovieWidget">
+        <receiver android:name="com.esekiel.moviecatalogue.util.widget.MovieWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -25,13 +25,13 @@
         </receiver>
 
         <activity
-            android:name=".ui.detail.TvDetailActivity"
+            android:name="com.esekiel.moviecatalogue.ui.detail.TvDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.detail.MovieDetailActivity"
+            android:name="com.esekiel.moviecatalogue.ui.detail.MovieDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.esekiel.moviecatalogue.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,13 +41,13 @@
         </activity>
 
         <receiver
-            android:name=".util.notifications.NotificationReceiver"
+            android:name="com.esekiel.moviecatalogue.util.notifications.NotificationReceiver"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedReceiver" />
 
         <service
-            android:name=".util.widget.MovieWidgetService"
+            android:name="com.esekiel.moviecatalogue.util.widget.MovieWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
 

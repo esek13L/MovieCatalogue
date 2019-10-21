@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_movie"
-        android:name="test.esekiel.com.moviecatalogue.ui.movie.MovieFragment"
+        android:name="com.esekiel.moviecatalogue.ui.movie.MovieFragment"
         android:label="@string/title_movies"
         tools:layout="@layout/fragment_movie" />
 
     <fragment
         android:id="@+id/navigation_tvshow"
-        android:name="test.esekiel.com.moviecatalogue.ui.tvshow.TvFragment"
+        android:name="com.esekiel.moviecatalogue.ui.tvshow.TvFragment"
         android:label="@string/title_tvshows"
         tools:layout="@layout/fragment_tvshow" />
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="test.esekiel.com.moviecatalogue.ui.favorite.FavoriteFragment"
+        android:name="com.esekiel.moviecatalogue.ui.favorite.FavoriteFragment"
         android:label="@string/title_favorite"
         tools:layout="@layout/fragment_favorite"/>
 
