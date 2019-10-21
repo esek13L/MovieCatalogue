@@ -1,4 +1,4 @@
-package test.esekiel.com.moviecatalogue;
+package com.esekiel.moviecatalogue;
 
 import org.junit.Test;
 
