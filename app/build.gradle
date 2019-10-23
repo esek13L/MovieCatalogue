@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     defaultConfig {
-        buildConfigField("String", "TMDB_API_KEY", '"fdc3d9ee3903766dc0b03d0adc487376"')
+        buildConfigField("String", "TMDB_API_KEY", '"Put Your API HERE"')
         applicationId "com.esekiel.moviecatalogue"
         minSdkVersion 21
         targetSdkVersion 29
