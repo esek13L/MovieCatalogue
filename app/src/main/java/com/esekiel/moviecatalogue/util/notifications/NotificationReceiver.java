@@ -22,7 +22,6 @@ import com.esekiel.moviecatalogue.data.rest.NotificationClient;
 import com.esekiel.moviecatalogue.data.rest.RestApi;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -43,9 +42,6 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     private Context context;
 
-    public NotificationReceiver() {
-
-    }
 
     public NotificationReceiver(Context context) {
         this.context = context;
@@ -55,10 +51,12 @@ public class NotificationReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         String type = intent.getStringExtra(EXTRA_TYPE);
-        if (type.equals(TYPE_DAILY)) {
-            showDaily(context);
-        } else if (type.equals(TYPE_RELEASE)) {
-            getReleaseToday(context);
+        if (type != null) {
+            if (type.equals(TYPE_DAILY)) {
+                showDaily(context);
+            } else if (type.equals(TYPE_RELEASE)) {
+                getReleaseToday(context);
+            }
         }
 
     }
@@ -86,7 +84,9 @@ public class NotificationReceiver extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, ID_RELEASE_NOTIFICATION, getReminderIntent(TYPE_RELEASE), 0);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, getReminderTime(TYPE_RELEASE).getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        if (alarmManager != null) {
+            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, getReminderTime(TYPE_RELEASE).getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
 
 
     }
@@ -95,7 +95,9 @@ public class NotificationReceiver extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, ID_DAILY_NOTIFICATION, getReminderIntent(TYPE_DAILY), 0);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, getReminderTime(TYPE_DAILY).getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        if (alarmManager != null) {
+            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, getReminderTime(TYPE_DAILY).getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
 
 
     }
@@ -112,7 +114,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 if (response.isSuccessful()) {
-                    List<MovieResult> results = new ArrayList<>();
+                    List<MovieResult> results;
                     results = response.body().getResults();
                     int id = 2;
                     for (MovieResult result : results) {

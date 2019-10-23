@@ -1,14 +1,15 @@
 package com.esekiel.moviecatalogue.util.notifications;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
+import com.esekiel.moviecatalogue.R;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
-import com.esekiel.moviecatalogue.R;
-
-import android.os.Bundle;
-import android.widget.Toast;
 
 public class NotificationActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class NotificationActivity extends AppCompatActivity {
                 .commit();
     }
 
-    static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
+    public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
 
         private NotificationReceiver receiver;
         @Override
