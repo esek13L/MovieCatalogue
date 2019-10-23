@@ -2,29 +2,27 @@ package com.esekiel.moviecatalogue.ui.favorite;
 
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import com.esekiel.moviecatalogue.R;
 import com.esekiel.moviecatalogue.ui.favorite.movie.FavoriteMovieFragment;
 import com.esekiel.moviecatalogue.ui.favorite.tvshow.FavoriteTvFragment;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FavoriteFragment extends Fragment {
 
-    ViewPager viewPager;
-    TabLayout tabLayout;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
 
 
     public FavoriteFragment() {

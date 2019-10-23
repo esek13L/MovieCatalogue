@@ -9,8 +9,4 @@ public class MovieWidgetService extends RemoteViewsService {
         return new MovieRemoteViewsFactory(this.getApplicationContext(), intent);
     }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
 }

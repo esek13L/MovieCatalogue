@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class FavoriteAdapter extends FragmentPagerAdapter {
+class FavoriteAdapter extends FragmentPagerAdapter {
 
     private final List<String> pageTitle = new ArrayList<>();
     private final List<Fragment> pageFragment = new ArrayList<>();

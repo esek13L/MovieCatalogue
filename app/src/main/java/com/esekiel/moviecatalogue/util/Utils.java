@@ -1,10 +1,12 @@
 package com.esekiel.moviecatalogue.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.esekiel.moviecatalogue.R;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -12,11 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
-import com.esekiel.moviecatalogue.R;
 
 public class Utils {
 
-    public final static String DATE_FORMAT_DAY = "EEEE, MMM d, yyyy";
+    private final static String DATE_FORMAT_DAY = "EEEE, MMM d, yyyy";
 
     public static CircularProgressDrawable getProgressDrawable(Context context) {
         CircularProgressDrawable progressDrawable = new CircularProgressDrawable(context);
@@ -51,11 +52,13 @@ public class Utils {
     private static String format(String date) {
         String result = "";
 
-        DateFormat old = new SimpleDateFormat("yyyy-MM-dd");
+        @SuppressLint("SimpleDateFormat") DateFormat old = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date oldDate = old.parse(date);
-            DateFormat newFormat = new SimpleDateFormat(Utils.DATE_FORMAT_DAY);
-            result = newFormat.format(oldDate);
+            @SuppressLint("SimpleDateFormat") DateFormat newFormat = new SimpleDateFormat(Utils.DATE_FORMAT_DAY);
+            if (oldDate != null) {
+                result = newFormat.format(oldDate);
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }

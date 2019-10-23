@@ -2,12 +2,6 @@ package com.esekiel.moviecatalogue.ui.favorite.tvshow;
 
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,12 +9,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.esekiel.moviecatalogue.R;
+
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.esekiel.moviecatalogue.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +27,7 @@ import com.esekiel.moviecatalogue.R;
 public class FavoriteTvFragment extends Fragment {
 
     private FavoriteTvViewModel viewModel;
-    private FavoriteTvAdapter adapter = new FavoriteTvAdapter(new ArrayList<>());
+    private final FavoriteTvAdapter adapter = new FavoriteTvAdapter(new ArrayList<>());
     private RecyclerView recyclerView;
 
 
@@ -71,10 +70,8 @@ public class FavoriteTvFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.delete_all_onclick:
-                deleteAll();
-
+        if (id == R.id.delete_all_onclick) {
+            deleteAll();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -92,6 +89,6 @@ public class FavoriteTvFragment extends Fragment {
     }
 
     private void loadData(){
-        viewModel.getAllTv().observe(this, tvs -> adapter.setTvs(tvs));
+        viewModel.getAllTv().observe(this, adapter::setTvs);
     }
 }

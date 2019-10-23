@@ -5,33 +5,21 @@
     <string name="title_tvshows">Tv Seri</string>
     <string name="title_favorite">Favorit</string>
     <string name="error_message">Pesan Error</string>
-    <string name="error_title">Error</string>
-    <string name="no_result">Tidak Ada Hasil</string>
-    <string name="try_again">Silahkan Coba Lagi</string>
-    <string name="unknown">Sesuatu ada yang Salah, tolong periksa koneksi anda atau Server rusak</string>
     <string name="change_language_settings">Ganti Bahasa</string>
     <string name="delete_all_lists">Hapus Semua List</string>
     <string name="deleted">Dihapus</string>
-    <string name="tv_deleted">TV Dihapus</string>
-    <string name="movie_deleted">Film Dihapus</string>
     <string name="add_fav">Ditambahkan ke Favorit</string>
     <string name="del_fav">Dihapuskan dari Favorit</string>
-    <string name="miss_desc">Deskripsi Hilang</string>
     <string name="delete_all_options">Apakah anda yakin untuk menghapus semua Favorit?</string>
     <string name="yes">Iya</string>
     <string name="no">Tidak</string>
-    <string name="back">Kembali</string>
     <string name="search_item">Cari item</string>
-    <string name="appwidget_text">List favorit</string>
-    <string name="add_widget">Tambah widget</string>
     <string name="back_poster">BackdropPoster</string>
     <string name="rating">%s/10</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pref_key_movie_fav">movie_favorite</string>
     <string name="saved_fav_movie_key">new Favorite Movie Key</string>
     <string name="pref_key_tv_fav">tv_favorite</string>
-    <string name="saved_fav_tv_key">new Favorite Tv Key</string>
     <string name="text_overview">Overview</string>
 </resources>

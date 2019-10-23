@@ -19,8 +19,8 @@ public class MovieWidget extends AppWidgetProvider {
     public static final String EXTRA_ITEM = "EXTRA_ITEM";
     private static final String TOAST_ACTION = "TOAST_ACTION";
 
-    static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
+    private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
+                                        int appWidgetId) {
 
 
         Intent intent = new Intent(context, MovieWidgetService.class);

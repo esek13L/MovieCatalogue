@@ -1,5 +1,9 @@
 package com.esekiel.moviecatalogue.ui.movie;
 
+import com.esekiel.moviecatalogue.data.di.DaggerRestComponent;
+import com.esekiel.moviecatalogue.data.model.Movie;
+import com.esekiel.moviecatalogue.data.rest.RestService;
+
 import javax.inject.Inject;
 
 import androidx.lifecycle.MutableLiveData;
@@ -8,16 +12,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
-import com.esekiel.moviecatalogue.data.di.DaggerRestComponent;
-import com.esekiel.moviecatalogue.data.model.Movie;
-import com.esekiel.moviecatalogue.data.rest.RestService;
 
 public class MovieViewModel extends ViewModel {
 
-    MutableLiveData<Movie> movies = new MutableLiveData<>();
-    MutableLiveData<Boolean> movieLoadError = new MutableLiveData<>();
-    MutableLiveData<Boolean> loading = new MutableLiveData<>();
-    private CompositeDisposable disposable = new CompositeDisposable();
+    final MutableLiveData<Movie> movies = new MutableLiveData<>();
+    final MutableLiveData<Boolean> movieLoadError = new MutableLiveData<>();
+    final MutableLiveData<Boolean> loading = new MutableLiveData<>();
+    private final CompositeDisposable disposable = new CompositeDisposable();
 
     @Inject
     public RestService service;

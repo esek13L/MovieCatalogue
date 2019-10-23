@@ -9,19 +9,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 import com.esekiel.moviecatalogue.R;
 import com.esekiel.moviecatalogue.data.model.TvResult;
 import com.esekiel.moviecatalogue.ui.detail.TvDetailActivity;
 import com.esekiel.moviecatalogue.util.Utils;
 
+import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
 
-    private List<TvResult> tv;
+    private final List<TvResult> tv;
 
     public TvAdapter(List<TvResult> tv) {
         this.tv = tv;
@@ -46,12 +47,12 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
 
     public class TvViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textTitle;
-        private TextView textOverview;
-        private ImageView imagePoster;
-        private CardView cardView;
+        private final TextView textTitle;
+        private final TextView textOverview;
+        private final ImageView imagePoster;
+        private final CardView cardView;
 
-        public TvViewHolder(@NonNull View itemView) {
+        TvViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.tv_title);
             textOverview = itemView.findViewById(R.id.tv_overview);

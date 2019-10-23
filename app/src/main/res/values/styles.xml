@@ -14,17 +14,6 @@
     </style>
 
 
-    <style name="Title">
-        <item name="android:textColor">@color/colorBlack</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="Overview">
-        <item name="android:textColor">@color/colorBlack</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
     <style name="TextItem">
         <item name="android:layout_marginRight">12dp</item>
         <item name="android:layout_marginStart">12dp</item>

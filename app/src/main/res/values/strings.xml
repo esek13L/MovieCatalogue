@@ -4,34 +4,22 @@
     <string name="title_tvshows">Tv Shows</string>
     <string name="title_favorite">Favorite</string>
     <string name="error_message">Error Message</string>
-    <string name="error_title">Error</string>
-    <string name="no_result">No Result</string>
-    <string name="try_again">Please Try Again..</string>
-    <string name="unknown">Something went wrong, please check your connection or server broken..</string>
     <string name="change_language_settings">Change Language</string>
     <string name="delete_all_lists">Delete All Lists</string>
     <string name="deleted">Deleted</string>
-    <string name="tv_deleted">TV Deleted</string>
-    <string name="movie_deleted">Movie Deleted</string>
     <string name="add_fav">Added to Favorites</string>
     <string name="del_fav">Removed from Favorites</string>
-    <string name="miss_desc">Missing Description</string>
-    <string name="delete_all_options">Are You Sure Wanna Delete All Favorite?</string>
+    <string name="delete_all_options">Are You Sure Want to Delete All Favorite?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="back">Back</string>
     <string name="search_item">Search Item</string>
-    <string name="appwidget_text">Favorite List</string>
-    <string name="add_widget">Add widget</string>
     <string name="back_poster">BackdropPoster</string>
     <string name="rating">%s/10</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pref_key_movie_fav">movie_favorite</string>
     <string name="saved_fav_movie_key">new Favorite Movie Key</string>
     <string name="pref_key_tv_fav">tv_favorite</string>
-    <string name="saved_fav_tv_key">new Favorite Tv Key</string>
     <string name="text_overview">Overview</string>
     <string name="key_daily_reminder">daily_reminder</string>
     <string name="key_release_reminder">release_reminder</string>
@@ -41,5 +29,7 @@
     <string name="summary_daily">Reminder to return to app</string>
     <string name="message_daily">Hey Dont you miss me?</string>
     <string name="release_today_msg">%s Release today, don\'t forget to watch it!</string>
-    <string name="has_been_release">%s has been release today!</string>
+    <string name="notifications">Notifications</string>
+    <string name="empty">Empty</string>
+    <string name="not_found">Not Found</string>
 </resources>

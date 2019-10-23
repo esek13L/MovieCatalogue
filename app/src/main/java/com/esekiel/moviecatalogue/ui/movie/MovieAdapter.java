@@ -9,19 +9,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.esekiel.moviecatalogue.R;
+import com.esekiel.moviecatalogue.data.model.MovieResult;
+import com.esekiel.moviecatalogue.ui.detail.MovieDetailActivity;
+import com.esekiel.moviecatalogue.util.Utils;
+
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.esekiel.moviecatalogue.ui.detail.MovieDetailActivity;
-import com.esekiel.moviecatalogue.R;
-import com.esekiel.moviecatalogue.data.model.MovieResult;
-import com.esekiel.moviecatalogue.util.Utils;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
-    private List<MovieResult> movies;
+    private final List<MovieResult> movies;
 
     public MovieAdapter(List<MovieResult> movies) {
         this.movies = movies;
@@ -46,12 +47,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textTitle;
-        private TextView textOverview;
-        private ImageView imagePoster;
-        private CardView cardView;
+        private final TextView textTitle;
+        private final TextView textOverview;
+        private final ImageView imagePoster;
+        private final CardView cardView;
 
-        public MovieViewHolder(@NonNull View itemView) {
+        MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.tv_title);
             textOverview = itemView.findViewById(R.id.tv_overview);

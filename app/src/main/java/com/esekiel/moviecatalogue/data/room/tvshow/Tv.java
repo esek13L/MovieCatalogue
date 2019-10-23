@@ -11,19 +11,19 @@ public class Tv {
 
     public static final String TABLE_NAME = "tv_table";
 
-    public static final String COLUMN_ID = BaseColumns._ID;
+    private static final String COLUMN_ID = BaseColumns._ID;
 
     public static final String COLUMN_NAME = "title";
 
-    public static final String COLUMN_OVERVIEW = "overview";
+    private static final String COLUMN_OVERVIEW = "overview";
 
-    public static final String COLUMN_POSTER = "poster";
+    private static final String COLUMN_POSTER = "poster";
 
-    public static final String COLUMN_DATE = "release_date";
+    private static final String COLUMN_DATE = "release_date";
 
-    public static final String COLUMN_RATE = "vote_rating";
+    private static final String COLUMN_RATE = "vote_rating";
 
-    public static final String COLUMN_BACKPOST = "back_poster";
+    private static final String COLUMN_BACKPOST = "back_poster";
 
 
     @PrimaryKey

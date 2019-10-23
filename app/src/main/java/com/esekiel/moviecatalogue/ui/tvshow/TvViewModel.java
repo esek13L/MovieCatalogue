@@ -14,10 +14,10 @@ import com.esekiel.moviecatalogue.data.rest.RestService;
 
 public class TvViewModel extends ViewModel {
 
-    MutableLiveData<Tv> tvShow = new MutableLiveData<>();
-    MutableLiveData<Boolean> tvLoadError = new MutableLiveData<>();
-    MutableLiveData<Boolean> loading = new MutableLiveData<>();
-    private CompositeDisposable disposable = new CompositeDisposable();
+    final MutableLiveData<Tv> tvShow = new MutableLiveData<>();
+    final MutableLiveData<Boolean> tvLoadError = new MutableLiveData<>();
+    final MutableLiveData<Boolean> loading = new MutableLiveData<>();
+    private final CompositeDisposable disposable = new CompositeDisposable();
 
     @Inject
     public RestService service;

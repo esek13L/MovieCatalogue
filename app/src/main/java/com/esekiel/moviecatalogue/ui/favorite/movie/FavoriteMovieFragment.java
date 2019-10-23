@@ -4,12 +4,6 @@ package com.esekiel.moviecatalogue.ui.favorite.movie;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,14 +11,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.esekiel.moviecatalogue.R;
+import com.esekiel.moviecatalogue.util.widget.MovieWidget;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.esekiel.moviecatalogue.R;
-import com.esekiel.moviecatalogue.util.widget.MovieWidget;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +31,7 @@ import com.esekiel.moviecatalogue.util.widget.MovieWidget;
 public class FavoriteMovieFragment extends Fragment {
 
     private FavoriteMovieViewModel viewModel;
-    private FavoriteMovieAdapter adapter = new FavoriteMovieAdapter(new ArrayList<>());
+    private final FavoriteMovieAdapter adapter = new FavoriteMovieAdapter(new ArrayList<>());
     private RecyclerView recyclerView;
 
 
@@ -99,7 +98,7 @@ public class FavoriteMovieFragment extends Fragment {
     }
 
     private void loadData() {
-        viewModel.getAllMovies().observe(this, movies -> adapter.setMovies(movies));
+        viewModel.getAllMovies().observe(this, adapter::setMovies);
     }
 
     private void updateAllWidgets() {

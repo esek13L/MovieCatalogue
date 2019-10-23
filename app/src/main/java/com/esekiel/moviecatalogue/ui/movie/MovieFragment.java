@@ -14,19 +14,20 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.esekiel.moviecatalogue.R;
+import com.esekiel.moviecatalogue.util.notifications.NotificationActivity;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.esekiel.moviecatalogue.util.notifications.NotificationActivity;
-import com.esekiel.moviecatalogue.R;
 
 public class MovieFragment extends Fragment {
 
@@ -41,11 +42,9 @@ public class MovieFragment extends Fragment {
     private MovieViewModel viewModel;
     private MovieAdapter adapter = new MovieAdapter(new ArrayList<>());
 
-    private MovieViewModel movieViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
         View root = inflater.inflate(R.layout.fragment_movie, container, false);
         itemList = root.findViewById(R.id.list_recycler);
         errorList = root.findViewById(R.id.list_error);

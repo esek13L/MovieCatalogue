@@ -1,5 +1,7 @@
 package com.esekiel.moviecatalogue.data.room.movie;
 
+import android.database.Cursor;
+
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
@@ -28,6 +30,12 @@ public interface MovieDao {
     @Query("SELECT * from " + Movie.TABLE_NAME)
     List<Movie> getWidgetMovie();
 
+    //content provider
+    @Query("SELECT * FROM " + Movie.TABLE_NAME)
+    Cursor selectAll();
+
+    @Query("SELECT * FROM " + Movie.TABLE_NAME + " WHERE " + Movie.COLUMN_ID  + " = :id")
+    Cursor selectById(long id);
 
 
 

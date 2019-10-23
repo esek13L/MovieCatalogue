@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardview_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_poster"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_toEndOf="@id/img_poster"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@id/img_poster"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="12sp"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

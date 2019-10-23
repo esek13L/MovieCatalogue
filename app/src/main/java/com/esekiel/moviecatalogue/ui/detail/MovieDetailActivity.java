@@ -24,18 +24,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
-    Double textRating;
-    long textId;
-    TextView tvTitle;
-    TextView tvOverview;
-    TextView tvRating;
-    TextView tvDate;
-    ProgressBar progressBar;
-    MovieDetailViewModel viewModel;
-    Toolbar toolbar;
-    ImageView imgPoster, imgBack;
-    Boolean isFavorite;
-    FloatingActionButton fabFavorite;
+    private Double textRating;
+    private long textId;
+    private TextView tvTitle;
+    private TextView tvOverview;
+    private TextView tvRating;
+    private TextView tvDate;
+    private ProgressBar progressBar;
+    private MovieDetailViewModel viewModel;
+    private Toolbar toolbar;
+    private ImageView imgPoster;
+    private ImageView imgBack;
+    private Boolean isFavorite;
+    private FloatingActionButton fabFavorite;
     private String textTitle, textOverview, imgPic, textDate, imgBck;
 
     @Override
@@ -72,8 +73,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         }
         loadMovies();
 
-        if (fabFavorite!= null) {
+        if (fabFavorite != null) {
             fabFavorite.setOnClickListener(view -> {
+
                 isFavorite = readFavoriteState();
                 if (isFavorite) {
                     fabFavorite.setImageResource(R.drawable.ic_favorite_orange_24dp);
@@ -93,7 +95,6 @@ public class MovieDetailActivity extends AppCompatActivity {
 
             });
         }
-
 
 
     }
@@ -144,6 +145,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     private void saveFavorite(Boolean isFavorite) {
         SharedPreferences sharedPreferences = this.getSharedPreferences(getResources().getString(R.string.pref_key_movie_fav), MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -158,20 +160,21 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        if (!readFavoriteState()){
+        if (!readFavoriteState()) {
             fabFavorite.setImageResource(R.drawable.ic_favorite_orange_24dp);
-        }else {
+        } else {
             fabFavorite.setImageResource(R.drawable.ic_favorite_border_orange_24dp);
         }
         super.onResume();
     }
 
-    private void saveMovie(){
+
+    private void saveMovie() {
         Movie movie = new Movie(textId, textTitle, textOverview, imgPic, imgBck, textDate, textRating);
         viewModel.insert(movie);
     }
 
-    private void deleteMovie(){
+    private void deleteMovie() {
         Movie movie = new Movie(textId, textTitle, textOverview, imgPic, imgBck, textDate, textRating);
         viewModel.delete(movie);
     }
@@ -183,4 +186,5 @@ public class MovieDetailActivity extends AppCompatActivity {
         // Will call onDatasetChanged in ListWidgetService, doing a new requery
         appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.stack_view);
     }
+
 }

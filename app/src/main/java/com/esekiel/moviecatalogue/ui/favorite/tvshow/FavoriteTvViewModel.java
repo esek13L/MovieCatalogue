@@ -2,13 +2,14 @@ package com.esekiel.moviecatalogue.ui.favorite.tvshow;
 
 import android.app.Application;
 
+import com.esekiel.moviecatalogue.data.room.tvshow.Tv;
+import com.esekiel.moviecatalogue.data.room.tvshow.TvRepository;
+
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import com.esekiel.moviecatalogue.data.room.tvshow.Tv;
-import com.esekiel.moviecatalogue.data.room.tvshow.TvRepository;
 
 public class FavoriteTvViewModel extends AndroidViewModel {
 

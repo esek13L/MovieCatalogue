@@ -22,18 +22,18 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class TvDetailActivity extends AppCompatActivity {
 
-    Double textRating;
-    Long textId;
-    TextView tvTitle;
-    TextView tvOverview;
-    TextView tvRating;
-    TextView tvDate;
-    ProgressBar progressBar;
-    TvDetailViewModel viewModel;
-    Toolbar toolbar;
-    FloatingActionButton fabFavorite;
-    boolean isFavorite;
-    ImageView imgPoster, imgBack;
+    private Double textRating;
+    private Long textId;
+    private TextView tvTitle;
+    private TextView tvOverview;
+    private TextView tvRating;
+    private TextView tvDate;
+    private ProgressBar progressBar;
+    private TvDetailViewModel viewModel;
+    private FloatingActionButton fabFavorite;
+    private boolean isFavorite;
+    private ImageView imgPoster;
+    private ImageView imgBack;
     private String textTitle, textOverview, imgPic,  textDate, imgBck;
 
     @Override
@@ -49,7 +49,7 @@ public class TvDetailActivity extends AppCompatActivity {
         imgBack = findViewById(R.id.img_back_poster);
         fabFavorite = findViewById(R.id.fab_fav);
         progressBar = findViewById(R.id.progressbar);
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
@@ -116,7 +116,7 @@ public class TvDetailActivity extends AppCompatActivity {
             imgBack.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
         }, 500);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(textTitle);
+        getSupportActionBar().setTitle(textTitle);
         tvTitle.setText(textTitle);
         tvOverview.setText(textOverview);
         tvRating.setText(getResources().getString(R.string.rating, String.valueOf(textRating)));

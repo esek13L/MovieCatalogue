@@ -41,7 +41,7 @@ public class TvFragment extends Fragment {
     private SwipeRefreshLayout refreshLayout;
 
     private TvViewModel viewModel;
-    private TvAdapter adapter = new TvAdapter(new ArrayList<>());
+    private final TvAdapter adapter = new TvAdapter(new ArrayList<>());
 
     private TvViewModel tvViewModel;
 
@@ -156,7 +156,9 @@ public class TvFragment extends Fragment {
     private void searchTv(String keyword) {
         if (keyword.length() > 0) {
             viewModel.search(keyword);
-
+        } else {
+            errorList.setVisibility(View.VISIBLE);
+            errorList.setText(getResources().getString(R.string.not_found));
         }
 
     }

@@ -12,8 +12,8 @@ import io.reactivex.Single;
 public class RestService {
 
     private static RestService instance;
-    private String apiKey = BuildConfig.TMDB_API_KEY;
-    private String language = "en-US";
+    private final String apiKey = BuildConfig.TMDB_API_KEY;
+    private final String language = "en-US";
 
     @Inject
     public RestApi api;

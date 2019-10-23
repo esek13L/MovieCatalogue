@@ -15,36 +15,36 @@ public class Movie {
 
     public static final String COLUMN_NAME = "title";
 
-    public static final String COLUMN_OVERVIEW = "overview";
+    private static final String COLUMN_OVERVIEW = "overview";
 
-    public static final String COLUMN_POSTER = "poster";
+    private static final String COLUMN_POSTER = "poster";
 
-    public static final String COLUMN_DATE = "release_date";
+    private static final String COLUMN_DATE = "release_date";
 
-    public static final String COLUMN_RATE = "vote_rating";
+    private static final String COLUMN_RATE = "vote_rating";
 
-    public static final String COLUMN_BACKPOST = "back_poster";
+    private static final String COLUMN_BACKPOST = "back_poster";
 
 
     @PrimaryKey
     @ColumnInfo(name = COLUMN_ID, index = true)
-    private Long id;
+    private final Long id;
 
     @ColumnInfo(name = COLUMN_NAME)
-    private String title;
+    private final String title;
 
     @ColumnInfo(name = COLUMN_OVERVIEW)
-    private String overview;
+    private final String overview;
 
     @ColumnInfo(name = COLUMN_POSTER)
-    private String poster;
+    private final String poster;
 
     @ColumnInfo(name = COLUMN_BACKPOST)
     private String backPoster;
     @ColumnInfo(name = COLUMN_DATE)
-    private String release_date;
+    private final String release_date;
     @ColumnInfo(name = COLUMN_RATE)
-    private Double vote_rating;
+    private final Double vote_rating;
 
     public Movie(Long id, String title, String overview, String poster, String backPoster, String release_date, Double vote_rating) {
         this.id = id;

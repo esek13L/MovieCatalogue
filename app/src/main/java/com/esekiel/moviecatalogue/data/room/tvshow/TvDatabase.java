@@ -13,7 +13,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 @Database(entities = {Tv.class}, version = 1, exportSchema = false)
 public abstract class TvDatabase extends RoomDatabase {
 
-    public static final String TV_DATABASE = "tv_db";
+    private static final String TV_DATABASE = "tv_db";
     private static final Object LOCK = new Object();
     private static TvDatabase instance;
     private static final RoomDatabase.Callback callback = new RoomDatabase.Callback(){
@@ -41,7 +41,7 @@ public abstract class TvDatabase extends RoomDatabase {
     public abstract TvDao tvDao();
 
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
-        private TvDao dao;
+        private final TvDao dao;
 
         PopulateDbAsync(TvDatabase db){
             dao = db.tvDao();

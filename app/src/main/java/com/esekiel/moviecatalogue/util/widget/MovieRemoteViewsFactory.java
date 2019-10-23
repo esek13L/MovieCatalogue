@@ -20,7 +20,7 @@ import com.esekiel.moviecatalogue.R;
 import com.esekiel.moviecatalogue.data.room.movie.Movie;
 import com.esekiel.moviecatalogue.data.room.movie.MovieDatabase;
 
-public class MovieRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
+class MovieRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
     private final Context context;
     private List<Movie> mlist = new ArrayList<>();

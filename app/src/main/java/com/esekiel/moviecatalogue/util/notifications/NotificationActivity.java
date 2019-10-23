@@ -21,7 +21,7 @@ public class NotificationActivity extends AppCompatActivity {
                 .commit();
     }
 
-    public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
+    static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
 
         private NotificationReceiver receiver;
         @Override

@@ -9,15 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.esekiel.moviecatalogue.R;
+import com.esekiel.moviecatalogue.data.room.movie.Movie;
+import com.esekiel.moviecatalogue.ui.detail.MovieDetailActivity;
+import com.esekiel.moviecatalogue.util.Utils;
+
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.esekiel.moviecatalogue.R;
-import com.esekiel.moviecatalogue.data.room.movie.Movie;
-import com.esekiel.moviecatalogue.ui.detail.MovieDetailActivity;
-import com.esekiel.moviecatalogue.util.Utils;
 
 public class FavoriteMovieAdapter extends RecyclerView.Adapter<FavoriteMovieAdapter.ViewHolder> {
 
@@ -55,12 +56,12 @@ public class FavoriteMovieAdapter extends RecyclerView.Adapter<FavoriteMovieAdap
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
-        private ImageView imgPoster;
-        private TextView tvTitle;
-        private TextView tvOverview;
+        private final CardView cardView;
+        private final ImageView imgPoster;
+        private final TextView tvTitle;
+        private final TextView tvOverview;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.cardview_layout);
             imgPoster = itemView.findViewById(R.id.img_poster);
