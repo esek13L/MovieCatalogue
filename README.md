@@ -14,11 +14,11 @@ This is the final submission in Menjadi Android Developer Expert (MADE) Dicoding
 7. SwipeRefreshLayout to refresh the data
 8. Progressbar as an indicator loading
 9. Room as an database to CRUD list of favorite movie and tvshow
-10.Stackwidget
-11.Notification Channel to support Notification on Android O and above
-12.Content provider to show list of favorited movie in Consumer application
+10. Stackwidget
+11. Notification Channel to support Notification on Android O and above
+12. Content provider to show list of favorited movie in Consumer application
 
 ## Reminder
-Please use this as a reference for your journey in MADE Dicoding, Cheers
+Please use this as a reference for your journey in MADE Dicoding, Cheers 
 
 
